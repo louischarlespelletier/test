@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Testing METAR</p>
+
+<script>
+getText("https://aviationweather.gov/api/data/metar?ids=CYUL&date=20240523_034001Z");
+
+async function getText(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  document.getElementById("demo").innerHTML = myText;
+}
+</script>
+
+</body>
+</html>
